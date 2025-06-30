@@ -7,6 +7,8 @@ main() return 1;
 
 #include "../include/core/config.inc"
 
+// HELP GIT
+
 new carId[MAX_PLAYERS];
 
 enum player_dialogs
@@ -137,11 +139,11 @@ new Float: spawnPositions[sizeof(spawnPositionsLS) + sizeof(spawnPositionsSF) + 
 
 CMD:changespawn(playerid, params[])
 {
-	ShowPlayerDialog(playerid, DIALOG_SPAWNS, DIALOG_STYLE_LIST, "Выбор спавна", "\
-		Лос Сантос\n\
-		Сан Фиерро\n\
-		Лас Вентурас\n\
-		Все", "Ок", "Не ок");
+	ShowPlayerDialog(playerid, DIALOG_SPAWNS, DIALOG_STYLE_LIST, "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "\
+		пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\n\
+		пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\n\
+		пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n\
+		пїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
 	return 1;
 }
 
@@ -150,13 +152,13 @@ CMD:stats(playerid, params[])
 	new str[80 + (11 * 5)];
 	format(str, sizeof(str), "\
 		ID: %d\n\
-		Админ: %d\n\
-		Убийства: %d\n\
-		Смерти: %d\n\
-		Деньги: %d\n\
-		Опыт: %d", pInfo[playerid][pID], pInfo[playerid][pAdminLevel], pInfo[playerid][pKills], pInfo[playerid][pDeaths], pInfo[playerid][pMoney], pInfo[playerid][pExp]);
+		пїЅпїЅпїЅпїЅпїЅ: %d\n\
+		пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: %d\n\
+		пїЅпїЅпїЅпїЅпїЅпїЅ: %d\n\
+		пїЅпїЅпїЅпїЅпїЅпїЅ: %d\n\
+		пїЅпїЅпїЅпїЅ: %d", pInfo[playerid][pID], pInfo[playerid][pAdminLevel], pInfo[playerid][pKills], pInfo[playerid][pDeaths], pInfo[playerid][pMoney], pInfo[playerid][pExp]);
 
-	ShowPlayerDialog(playerid, DIALOG_PLAYER_STATS, DIALOG_STYLE_MSGBOX, "Статистика", str, "Ок", "Отмена");
+	ShowPlayerDialog(playerid, DIALOG_PLAYER_STATS, DIALOG_STYLE_MSGBOX, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", str, "пїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ");
 	return 1;
 }
 
@@ -168,11 +170,11 @@ public OnPlayerDataLoaded(playerid)
  
     if(!rows)
     {
-        ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "Регистрация нового пользователя", "Введите пароль для регистрации нового аккаунта:", "Регистрация", "Выход");
+        ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ:", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
     }
     else
     {
-        ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "Авторизация", "Введите пароль от аккаунта для того, чтоб продолжить игру:", "Вход", "Выход");
+        ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ:", "пїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
         cache_get_value_name(0, "Password", pInfo[playerid][pPassword], 28);
     }
 }
@@ -194,7 +196,7 @@ public UploadPlayerAccount(playerid)
 	if(pInfo[playerid][pAdminLevel] > 0)
 		SetPlayerColor(playerid, 0xFF0000FF);
 
-	SendClientMessage(playerid, -1, "Вы прошли авторизацию.");
+	SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
 
 	new query[40 + MAX_PLAYER_NAME];
 	mysql_format(ConnectID, query, sizeof(query), "UPDATE users SET IsOnline = 1 WHERE Id = %d", pInfo[playerid][pID]);
@@ -206,7 +208,7 @@ stock OnSpawnsArrayFill()
 {
 	new idx = 0;
 
-    // Копируем spawnPositionsLS
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ spawnPositionsLS
     for(new i = 0; i < sizeof(spawnPositionsLS); i++)
     {
         for(new j = 0; j < 4; j++)
@@ -216,7 +218,7 @@ stock OnSpawnsArrayFill()
         idx++;
     }
 
-    // Копируем spawnPositionsSF
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ spawnPositionsSF
     for(new i = 0; i < sizeof(spawnPositionsSF); i++)
     {
         for(new j = 0; j < 4; j++)
@@ -226,7 +228,7 @@ stock OnSpawnsArrayFill()
         idx++;
     }
 
-    // Копируем spawnPositionsLV
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ spawnPositionsLV
     for(new i = 0; i < sizeof(spawnPositionsLV); i++)
     {
         for(new j = 0; j < 4; j++)
@@ -294,7 +296,7 @@ public OnPlayerConnect(playerid)
 	}
 	else
 	{
-		SendClientMessage(playerid, -1, "у сервера проблемесы с бд пока");
+		SendClientMessage(playerid, -1, "пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ");
 	}
 	
 	return 1;
@@ -316,10 +318,10 @@ public OnPlayerSpawn(playerid)
 	if(!pInfo[playerid][isFirstSpawn])
 	{
 		ShowPlayerDialog(playerid, DIALOG_FIRST_SPAWN, DIALOG_STYLE_MSGBOX, 
-			"Разработка", 
-			"Игровой режим находится в стадии разработки.\n\nВозможны неисправности в работе, если у вас есть жалобы или предложения, сообщите на почту разработчика goryunovlad@gmail.com.", 
-			"Ок", 
-			"Выход");
+			"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", 
+			"пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.\n\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ goryunovlad@gmail.com.", 
+			"пїЅпїЅ", 
+			"пїЅпїЅпїЅпїЅпїЅ");
 
 		pInfo[playerid][isFirstSpawn] = true;
 	}
@@ -384,16 +386,16 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 {
 	if(newkeys == KEY_YES)
 	{
-		ShowPlayerDialog(playerid, DIALOG_PLAYER_MENU, DIALOG_STYLE_LIST, "Меню", "\
-			Транспорт\n\
-			Телепорты", "Ок", "Не ок");
+		ShowPlayerDialog(playerid, DIALOG_PLAYER_MENU, DIALOG_STYLE_LIST, "пїЅпїЅпїЅпїЅ", "\
+			пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n\
+			пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
 	}
 
 	if(newkeys == KEY_WALK)
 	{
 		if(IsPlayerInRangeOfPoint(playerid, 3.0, 1413.4626,-1702.0651,13.5395))
 		{
-			ShowPlayerDialog(playerid, DIALOG_ORG_CREATE, DIALOG_STYLE_LIST, "Бизнес", "Создать", "Ок", "Не ок");
+			ShowPlayerDialog(playerid, DIALOG_ORG_CREATE, DIALOG_STYLE_LIST, "пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
 		}
 	}
 	return 1;
@@ -409,7 +411,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 			if(listitem == 0)
 			{
-				ShowPlayerDialog(playerid, DIALOG_ORG_NAME, DIALOG_STYLE_INPUT, "Название", "Наименование биза", "Ок", "Не ок");
+				ShowPlayerDialog(playerid, DIALOG_ORG_NAME, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
 			}
 		}
 
@@ -417,15 +419,15 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		{
 			if(!response) return 0;
 
-			if(!strlen(inputtext)) return ShowPlayerDialog(playerid, DIALOG_ORG_NAME, DIALOG_STYLE_MSGBOX, "Название", "Наименование биза", "Ок", "Не ок");
-			if(strlen(inputtext) < 3 || strlen(inputtext) > 96) return ShowPlayerDialog(playerid, DIALOG_ORG_NAME, DIALOG_STYLE_INPUT, "Название", "Наименование биза", "Ок", "Не ок");
+			if(!strlen(inputtext)) return ShowPlayerDialog(playerid, DIALOG_ORG_NAME, DIALOG_STYLE_MSGBOX, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
+			if(strlen(inputtext) < 3 || strlen(inputtext) > 96) return ShowPlayerDialog(playerid, DIALOG_ORG_NAME, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
 
 			for(new i; i < strlen(inputtext); i++)
 			{
 				switch(inputtext[i])
 				{
 					case 'A'..'Z', 'a'..'z', '0'..'9': continue;
-					default: return ShowPlayerDialog(playerid, DIALOG_ORG_NAME, DIALOG_STYLE_MSGBOX, "Название", "Наименование биза", "Ок", "Не ок");
+					default: return ShowPlayerDialog(playerid, DIALOG_ORG_NAME, DIALOG_STYLE_MSGBOX, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
 				}
 			}
 
@@ -433,7 +435,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			mysql_format(ConnectID, query, sizeof(query), "INSERT INTO teams (Name) VALUES ('%s')", inputtext);
 			mysql_tquery(ConnectID, query, "OnOrgCreate");
 
-			SendClientMessage(playerid, -1, "Вы успешно создали оргу.");
+			SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.");
 		}
 
 		case DIALOG_PLAYER_MENU:
@@ -442,31 +444,31 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 			if(listitem == 0)
 			{
-				ShowPlayerDialog(playerid, DIALOG_PLAYER_CARS, DIALOG_STYLE_LIST, "Транспорт", "\
-					Последний выбор\n\
-					Ввести ID\n\
-					Инфернус\n\
-					Элегия\n\
-					Туризмо", "Ок", "Не ок");
+				ShowPlayerDialog(playerid, DIALOG_PLAYER_CARS, DIALOG_STYLE_LIST, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "\
+					пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅ ID\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
 			}
 
 			if(listitem == 1)
 			{
-				ShowPlayerDialog(playerid, DIALOG_TELEPORTS, DIALOG_STYLE_LIST, "Телепорты", "\
-					> Лос Сантос\n\
-					Грув Стрит\n\
-					Доки\n\
-					Аэропорт\n\
-					Пирс\n\
-					Колесо\n\
-					Тенис\n\
-					Вайнвуд\n\
-					Центр\n\
-					Мэрия\n\
-					Скейтпарк\n\
-					Отель Джеферсон\n\
-					Станция Юнити\n\
-					Обсерватория", "Ок", "Не ок");
+				ShowPlayerDialog(playerid, DIALOG_TELEPORTS, DIALOG_STYLE_LIST, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "\
+					> пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n\
+					пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
 				
 			}
 		}
@@ -477,18 +479,18 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 			if(listitem == 0) return 0;
 			if(listitem == 1) SetPlayerPos(playerid, 2510.5278,-1669.3723,13.4670); // groove
-			if(listitem == 2) SetPlayerPos(playerid, 2761.4063,-2393.4446,13.6328); // доки
-			if(listitem == 3) SetPlayerPos(playerid, 1683.4183,-2244.7646,13.5431); // аэропорт
-			if(listitem == 4) SetPlayerPos(playerid, 848.9660,-2009.4229,12.8672); // пирс
-			if(listitem == 5) SetPlayerPos(playerid, 378.6031,-2037.5452,7.8301); // колесо
-			if(listitem == 6) SetPlayerPos(playerid, 678.4388,-1260.7935,13.6013); // тенис
-			if(listitem == 7) SetPlayerPos(playerid, 1478.1797,-743.5845,92.9847); // вайнвуд
-			if(listitem == 8) SetPlayerPos(playerid, 1509.0387,-1328.3885,14.0271);// центр
-			if(listitem == 9) SetPlayerPos(playerid, 1475.8754,-1722.3700,13.5469); // мэрия
-			if(listitem == 10) SetPlayerPos(playerid, 1876.8812,-1377.4958,13.5618); // скейтпарк
-			if(listitem == 11) SetPlayerPos(playerid, 2206.8823,-1159.6573,25.7287); // джеферсонотель
-			if(listitem == 12) SetPlayerPos(playerid, 1765.5928,-1900.4380,13.5649); // юнитистейшн
-			if(listitem == 13) SetPlayerPos(playerid, 1154.7061,-2012.7147,69.0078); // обсверватория
+			if(listitem == 2) SetPlayerPos(playerid, 2761.4063,-2393.4446,13.6328); // пїЅпїЅпїЅпїЅ
+			if(listitem == 3) SetPlayerPos(playerid, 1683.4183,-2244.7646,13.5431); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			if(listitem == 4) SetPlayerPos(playerid, 848.9660,-2009.4229,12.8672); // пїЅпїЅпїЅпїЅ
+			if(listitem == 5) SetPlayerPos(playerid, 378.6031,-2037.5452,7.8301); // пїЅпїЅпїЅпїЅпїЅпїЅ
+			if(listitem == 6) SetPlayerPos(playerid, 678.4388,-1260.7935,13.6013); // пїЅпїЅпїЅпїЅпїЅ
+			if(listitem == 7) SetPlayerPos(playerid, 1478.1797,-743.5845,92.9847); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			if(listitem == 8) SetPlayerPos(playerid, 1509.0387,-1328.3885,14.0271);// пїЅпїЅпїЅпїЅпїЅ
+			if(listitem == 9) SetPlayerPos(playerid, 1475.8754,-1722.3700,13.5469); // пїЅпїЅпїЅпїЅпїЅ
+			if(listitem == 10) SetPlayerPos(playerid, 1876.8812,-1377.4958,13.5618); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			if(listitem == 11) SetPlayerPos(playerid, 2206.8823,-1159.6573,25.7287); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			if(listitem == 12) SetPlayerPos(playerid, 1765.5928,-1900.4380,13.5649); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			if(listitem == 13) SetPlayerPos(playerid, 1154.7061,-2012.7147,69.0078); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 		}
 
@@ -535,14 +537,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				}
 				else
 				{
-					SendClientMessage(playerid, -1, "Вы еще не выбирали транспорт.");
+					SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
 				}
 			}
 
 			if(listitem == 1)
 			{
-				ShowPlayerDialog(playerid, DIALOG_PLAYER_CARID, DIALOG_STYLE_INPUT, "Вводите ID", "\
-					давай ид пиши тачки", "Ок", "Не ок");
+				ShowPlayerDialog(playerid, DIALOG_PLAYER_CARID, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID", "\
+					пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅ", "пїЅпїЅ пїЅпїЅ");
 			}
 
 			if(listitem == 2)
@@ -607,7 +609,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(listitem == 0)
 			{
 				new str[28 - 2 + 11];
-				format(str, sizeof(str), "Бюджет вашего заведения: %d", bInfo[pInfo[playerid][pHouseID]][bBudget]);
+				format(str, sizeof(str), "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: %d", bInfo[pInfo[playerid][pHouseID]][bBudget]);
 				SendClientMessage(playerid, -1, str);
 			}
 		}
@@ -618,7 +620,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 			if(listitem == 0)
 			{
-				if(GetPlayerMoney(playerid) < 70) return SendClientMessage(playerid, -1, "У вас нет такой суммы.");
+				if(GetPlayerMoney(playerid) < 70) return SendClientMessage(playerid, -1, "пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.");
 
 				bInfo[pInfo[playerid][pHouseID]][bBudget] += 70;
 
@@ -636,7 +638,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 			if(listitem == 1)
 			{
-				if(GetPlayerMoney(playerid) < 120) return SendClientMessage(playerid, -1, "У вас нет такой суммы.");
+				if(GetPlayerMoney(playerid) < 120) return SendClientMessage(playerid, -1, "пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.");
 
 				bInfo[pInfo[playerid][pHouseID]][bBudget] += 120;
 
@@ -654,7 +656,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 			if(listitem == 2)
 			{
-				if(GetPlayerMoney(playerid) < 180) return SendClientMessage(playerid, -1, "У вас нет такой суммы.");
+				if(GetPlayerMoney(playerid) < 180) return SendClientMessage(playerid, -1, "пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.");
 
 				bInfo[pInfo[playerid][pHouseID]][bBudget] += 180;
 
@@ -679,7 +681,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(!strcmp(bInfo[pInfo[playerid][pHouseID]][bOwner], pInfo[playerid][pName], false))
 				{
 					pInfo[playerid][pInBusiness] = true;
-					SendClientMessage(playerid, -1, "Вы зашли в заведение, которое принадлежит вам.");
+					SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ.");
 				}
 
 				switch(bInfo[pInfo[playerid][pHouseID]][bInterior])
@@ -709,25 +711,25 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			{
 				new str[22 + MAX_PLAYER_NAME + 11];
 				format(str, sizeof(str), "Price: %d \nOwner: %s", bInfo[pInfo[playerid][pHouseID]][bPrice], bInfo[pInfo[playerid][pHouseID]][bOwner]);
-				ShowPlayerDialog(playerid, DIALOG_BUSINESS_INFO, DIALOG_STYLE_MSGBOX, bInfo[pInfo[playerid][pHouseID]][bName], str, "Ок", "Назад");
+				ShowPlayerDialog(playerid, DIALOG_BUSINESS_INFO, DIALOG_STYLE_MSGBOX, bInfo[pInfo[playerid][pHouseID]][bName], str, "пїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
 			}
 			if(listitem == 2)
 			{
 				if(!strcmp(bInfo[pInfo[playerid][pHouseID]][bOwner], "-"))
 				{
-					if(GetPlayerMoney(playerid) < bInfo[pInfo[playerid][pHouseID]][bPrice]) return SendClientMessage(playerid, -1, "У вас недостаточно средств для покупки данного бизнеса.");
-					ShowPlayerDialog(playerid, DIALOG_BUSINESS_GET, DIALOG_STYLE_MSGBOX, "Покупка бизнеса", "Вы уверены, что хотите приобрести данный бизнес?", "Продолжить", "Выход");
+					if(GetPlayerMoney(playerid) < bInfo[pInfo[playerid][pHouseID]][bPrice]) return SendClientMessage(playerid, -1, "пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
+					ShowPlayerDialog(playerid, DIALOG_BUSINESS_GET, DIALOG_STYLE_MSGBOX, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ?", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
 				}
 				else
 				{
-					SendClientMessage(playerid, -1, "Извините, но у этого заведения уже есть владелец.");
+					SendClientMessage(playerid, -1, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
 				}
 			}
 		}
 
 		case DIALOG_BUSINESS_GET:
 		{
-			if(!response) return SendClientMessage(playerid, -1, "Вы отказались от покупки бизнеса.");
+			if(!response) return SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
 
 			new str[56 + MAX_PLAYER_NAME + 1 + 11];
 			format(str, sizeof(str), "UPDATE `Businesses` SET `Owner` = '%s' WHERE `ID` = '%d'", pInfo[playerid][pName], bInfo[pInfo[playerid][pHouseID]][bID]);
@@ -736,28 +738,28 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			bInfo[pInfo[playerid][pHouseID]][bOwner] = EOS;
 			strins(bInfo[pInfo[playerid][pHouseID]][bOwner], pInfo[playerid][pName], 0);
 
-			SendClientMessage(playerid, -1, "Вы успешно приобрели бизнес.");
+			SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.");
 			GivePlayerMoney(playerid, -bInfo[pInfo[playerid][pHouseID]][bPrice]);
 		}
 
 		case DIALOG_BUSINESS_INFO:
 		{
-			if(!response) return ShowPlayerDialog(playerid, DIALOG_BUSINESS_ENTER, DIALOG_STYLE_LIST, bInfo[pInfo[playerid][pHouseID]][bName], "Войти\nПосмотреть информацию о бизнесе\nПриобрести", "Выбрать", "Выход");
+			if(!response) return ShowPlayerDialog(playerid, DIALOG_BUSINESS_ENTER, DIALOG_STYLE_LIST, bInfo[pInfo[playerid][pHouseID]][bName], "пїЅпїЅпїЅпїЅпїЅ\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
 		}
 
 		case DIALOG_REGISTER:
 		{
 			if(!response) return Kick(playerid);
 
-			if(!strlen(inputtext)) return ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "Введите пароль", "пароль быстро", "Продолжить", "Выход");
-			if(strlen(inputtext) < 4 || strlen(inputtext) > 28) return ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "Введите пароль", "пароль быстро", "Продолжить", "Выход");
+			if(!strlen(inputtext)) return ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
+			if(strlen(inputtext) < 4 || strlen(inputtext) > 28) return ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
 
 			for(new i; i < strlen(inputtext); i++)
 			{
 				switch(inputtext[i])
 				{
 					case 'A'..'Z', 'a'..'z', '0'..'9': continue;
-					default: return ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "Введите пароль", "пароль быстро", "Продолжить", "Выход");
+					default: return ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
 				}
 			}
 
@@ -767,22 +769,22 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			mysql_format(ConnectID, query, sizeof(query), "INSERT INTO users (Login, Password) VALUES ('%s', '%s')", pInfo[playerid][pName], pInfo[playerid][pPassword]);
 			mysql_tquery(ConnectID, query, "OnPlayerRegister");
 
-			SendClientMessage(playerid, -1, "Вы успешно прошли регистрацию.");
+			SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
 		}
 
 		case DIALOG_LOGIN:
 		{
 			if(!response) return Kick(playerid);
 
-			if(!strlen(inputtext)) return ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "Введите пароль", "пароль быстро для авторизации", "Продолжить", "Выход");
-			if(strlen(inputtext) < 4 || strlen(inputtext) > 28) return ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "Введите пароль", "пароль быстро для авторизации", "Продолжить", "Выход");
+			if(!strlen(inputtext)) return ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
+			if(strlen(inputtext) < 4 || strlen(inputtext) > 28) return ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
 			
 			for(new i; i < strlen(inputtext); i++)
 			{
 				switch(inputtext[i])
 				{
 					case 'A'..'Z', 'a'..'z', '0'..'9': continue;
-					default: return ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "Введите пароль", "пароль быстро для авторизации", "Продолжить", "Выход");
+					default: return ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
 				}
 			}
 
@@ -794,7 +796,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			}
 			else 
 			{
-				ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "Введите пароль", "пароль быстро для авторизации", "Продолжить", "Выход");
+				ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ");
 			}
 
 		}
@@ -804,25 +806,25 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(listitem == 0)
 			{
 				pInfo[playerid][pSpawnPlace] = SPAWN_LS;
-				SendClientMessage(playerid, -1, "Вы сменили место спавна на Лос Сантос.");
+				SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.");
 			}
 
 			if(listitem == 1)
 			{
 				pInfo[playerid][pSpawnPlace] = SPAWN_SF;
-				SendClientMessage(playerid, -1, "Вы сменили место спавна на Сан Фиерро.");
+				SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.");
 			}
 
 			if(listitem == 2)
 			{
 				pInfo[playerid][pSpawnPlace] = SPAWN_LV;
-				SendClientMessage(playerid, -1, "Вы сменили место спавна на Лас Вентурас.");
+				SendClientMessage(playerid, -1, "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
 			}
 
 			if(listitem == 3)
 			{
 				pInfo[playerid][pSpawnPlace] = SPAWN_ALL;
-				SendClientMessage(playerid, -1, "Теперь вы будете появляться везде.");
+				SendClientMessage(playerid, -1, "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.");
 			}
 		}
 	}
